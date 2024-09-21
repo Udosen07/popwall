@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,50 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3d70b51120.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../src/css/_reset.css" />
   </head>
 
   <body>
-    <h1>Register</h1>
-
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
+    <div class="reg">
+      <div class="logosection">
+        <div class="logodiv">
+          <image src="../../src/assets/logo.png" class="logo" />
+          <h3 class="logoText">Popwall</h3>
+        </div>
+        <div class="rightSection">
+          <p class="regText">Already have an account?</p>
+          <div>
+            <a href="/auth/login/"
+              ><button class="logoSectionBtn">Login</button></a
+            >
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
+      <div class="mainContent">
+        <div class="mainContentText">
+          <p>
+            Welcome to popwall, here you can meet with new and interesting
+            individuals, have friends and share ideas and interest, engage with
+            people from different works of live and watch your day come alive as
+            you build relationship in this free platform, what are you waiting
+            for
+          </p>
+        </div>
+        <div class="regForm">
+          <h2>Welcome to Popwall</h2>
+          <p>
+            Welcome to popwall, here you can meet with new and interesting
+            individuals, have friends and share ideas and interest.
+          </p>
+          <form method="post" id="registerForm" name="register">
+            <div class="input-container">
+              <i class="icon fas fa-user"></i>
+              <input
+                type="text"
+                placeholder="Username"
+                id="userName"
+                required
+                maxlength="20"
+                pattern="^[\w]+$"
+              />
+            </div>
+            <div class="input-container">
+              <i class="icon fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                required
+                pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              />
+            </div>
+            <div class="input-container">
+              <textarea
+                placeholder="Tell us about Yourself"
+                id="bio"
+                required
+              ></textarea>
+            </div>
+            <div class="input-container">
+              <i class="icon fas fa-lock"></i>
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                minlength="8"
+                id="password"
+              />
+              <span type="button" id="toggle-password" class="toggleBtn">
+                <i class="toggle-password fas fa-eye-slash"></i
+              ></span>
+            </div>
+            <div class="check">
+              <input type="checkbox" required />
+              <h2 class="terms">
+                I agree to the <span>Terms and Service</span> and
+                <span>Privacy Policy.</span>
+              </h2>
+            </div>
+            <div id="loadingSpinner" style="display: none">
+              <i class="fas fa-spinner fa-spin"></i> Signing Up...
+            </div>
+            <div id="errorMessage" style="display: none; color: red"></div>
+            <button type="submit" class="submitBtn">Sign Up</button>
+          </form>
+        </div>
       </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
-    </form>
+    </div>
   </body>
 </html>

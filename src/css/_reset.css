@@ -6,7 +6,909 @@
   }
 }
 
+
+
 body {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Auth Styles */
+.logo{
+  width: 39px;
+  height: 63px;
+}
+
+.logoText{
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.logodiv{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logosection{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6%;
+  padding-top: 20px;
+}
+
+.logoSectionBtn{
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.rightSection{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.regText{
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.regForm {
+  background-color: #fff;
+  padding: 63px 93px;
+  border-radius: 20px;
+  width: 642px;
+  height: 807px;
+}
+
+.regFormLogin{
+  background-color: #fff;
+  padding: 63px 93px;
+  border-radius: 20px;
+  width: 642px;
+  height: 600px;
+}
+
+.regForm h2 {
+  margin: 5px 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.regForm p {
+  font-size: 16px;
+  color: #8BC4FF;
+  margin: 39px 0  20px 0;
+
+}
+
+.regForm form {
+  margin: 40px 0;
+}
+
+.submitBtn {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  background-color: #06113E;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-container textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+  padding-left: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-container .icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.input-container .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+}
+
+.mainContent{
+  display: grid;
+  gap: 130px;
+  grid-template-columns: 1fr 1fr;
+  padding: 47px 66px;
+   background: linear-gradient(50.57deg, #06113E 18.57%, rgba(62, 220, 255, 0.86) 89.63%);
+   height: auto;
+  
+}
+
+.mainContentLogin{
+  display: grid;
+  gap: 130px;
+  grid-template-columns: 1fr 1fr;
+  padding: 47px 66px;
+   background: linear-gradient(50.57deg, #06113E 18.57%, rgba(62, 220, 255, 0.86) 89.63%);
+   height: 100vh;
+  
+}
+
+.mainContentText{
+  display: flex;
+  align-items: center;
+  color: #3EDCFFDB;
+  
+}
+
+.check{
+  display: flex;
+  gap: 5px;
+}
+
+.check h2{
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.check span{
+  font-size: 16px;
+  color: #8BC4FF;
+}
+
+/* Home page Styles */
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 3%;
+}
+
+#mdNav{
+  display: none;
+}
+
+.navBarRight{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.searchInput-container {
+  position: relative;
+}
+
+.searchInput-container input {
+  width: 400px;
+  padding: 15px;
+  padding-left: 40px;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+.searchInput-container .icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.navBtn{
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #06113E;
+  color: #fff;
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%; /* Circular border radius */
+  overflow: hidden;
+}
+
+.profile-pic-container-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%; /* Circular border radius */
+  overflow: hidden;
+}
+
+.profile-pic-container-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%; /* Circular border radius */
+  overflow: hidden;
+}
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainBody {
+  background-color: #f4f4f4;
+  height: 90vh;
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.mainBody::-webkit-scrollbar {
+  display: none; 
+}
+
+.mainBodyGrid{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 2fr;
+  padding: 40px;
+}
+
+.gridProfile{
+  display: flex;
+  gap: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.profileName{
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+.profileName-post{
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 16px;
+}
+ .profileMail{
+  font-size: 16px;
+  color: #ABABAB;
+  margin-top: 0;
+ }
+.gridLinks{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 34px;
+}
+
+.gridLinks ul{
+  list-style: none;
+}
+
+.gridLinks ul a{
+  text-decoration: none;
+  color: #000;
+}
+
+.gridLinks li{
+  margin-bottom: 24px;
+  cursor: pointer;
+
+}
+
+.gridLinks li i{
+  margin-right: 10px;
+}
+
+.gridPost{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.gridPostHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.gridPostHeaderBtn{
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #06113E;
+  color: #fff;
+}
+
+.gridPostText{
+  margin-top: 0;
+}
+
+.gridBlogPostText{
+  margin-top: 0;
+}
+
+.gridPostImg{
+  width: 100%;
+  height: 400px;
+}
+
+.gridPostImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gridPostReactions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.gridPostReactions i{
+  font-size: 18px;
+}
+
+.paginationControls{
+  display: flex;
+  justify-content: space-between;
+}
+
+.paginationControls button{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 15px;
+  background-color:  #06113E;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+/* CreateStyles */
+
+.createReg {
+  margin: 20px;
+  height: 100vh;
+}
+
+.createRegText {
+  text-align: left;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.createRegText a {
+  text-decoration: none;
+  color:  #06113E;
+}
+
+.createRegForm {
+  margin: 100px auto;
+  width: 40%;
+  text-align: center;
+}
+
+.createRegForm h2 {
+  margin: 5px 0;
+}
+
+.createRegForm form {
+  margin: 40px 0;
+}
+
+.createBtn {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 15px;
+  width: 100%;
+  background-color:  #06113E;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.create-input-container {
+  margin-bottom: 20px;
+}
+
+.create-input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.create-input-container textarea {
+  padding: 15px 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+
+
+/* Single Post Page */
+
+.gridBlogPostHeader{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
+}
+
+.gridBlogPostImg{
+  width: 100%;
+  height: 400px;
+}
+
+.gridBlogPostImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.blogPost{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 60%;
+}
+
+.blogPostHeader{
+  text-align: center;
+}
+
+.blogPostComment{
+  margin-top: 20px;
+}
+
+.blogProfile{
+  display: flex;
+  gap: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.commentProfileName{
+  margin: 0;
+  font-size: 16px;
+}
+
+.profile-pic-container-blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; /* Circular border radius */
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.commentSec{
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.replyContainer {
+  margin-left: 40px; /* Indent replies */
+  border-left: 2px solid #ddd; /* Optional: Add a left border to indicate a reply */
+  padding-left: 10px;
+}
+
+.replySec {
+  background-color: #f5f5f5; /* Light background for replies */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.replyProfileName {
+  font-weight: bold;
+}
+
+.replyComment {
+  margin-top: 5px;
+}
+
+.replyInput{
+  width: 100%;
+  resize: none;
+}
+
+.replyButton{
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 7px;
+  background-color:  #06113E;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+#newComment{
+  margin-left: 60px;
+  padding: 10px;
+  resize: none;
+  width: 200px;
+}
+
+#submitComment{
+  display: flex;
+  justify-content: center;
+  margin-left: 60px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 7px;
+  background-color:  #06113E;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+
+}
+/* Profile Page */
+.profile-container{
+  width: 60%;
+  margin: 20px auto;
+}
+
+.profile-pic-container-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circular border radius */
+  overflow: hidden;
+}
+
+.profile-stats{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats{
+  display: flex;
+  gap: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.username{
+  font-weight: bold;
+}
+
+.bio{
+  margin-top: 30px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .mainContent{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px;
+  }
+
+  .regForm{
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    height: fit-content;
+  }
+
+  .mainContentLogin{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px;
+  }
+
+  .regFormLogin{
+    width: 100%;
+    margin: 60px auto;
+    padding: 30px;
+    height: 400px;
+  }
+
+  .mainContentText{
+    display: flex;
+    align-items: start;
+    margin-top: 180px;
+  
+    
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .createRegForm {
+    width: 60%;
+  }
+
+  .createRegForm form {
+    margin: 20px 0;
+  }
+  .logo{
+    width: 15px;
+    height: 30px;
+  }
+  
+  .logoText{
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .logodiv{
+    display: flex;
+    gap: 10px;
+  }
+
+  #lgNav{
+    display: none;
+  }
+  
+  .logosection{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3%;
+    padding-top: 20px;
+  }
+  
+  .logoSectionBtn{
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .rightSection{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .regText{
+    font-size: 16px;
+    display: none;
+  }
+
+  .regForm{
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px 15px;
+    height: fit-content;
+  }
+  .regFormLogin {
+    padding: 30px 40px;
+    width: 70%;
+    height: 400px;
+    
+  }
+  .mainContentText{
+    display: none;
+  }
+
+  .mainContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .mainContentLogin{
+    display: grid;
+    
+    grid-template-columns: 1fr;
+   
+    
+  }
+
+  .blogPost{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  .blogLogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  #mdNav{
+    display: block;
+    padding: 20px 0;
+  }
+  
+  .navLinks {
+    background: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    position: absolute;
+  }
+  
+  .navLinks a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .navLinks a li:hover {
+    background: #25419e;
+    transition: 0.5s;
+  }
+  
+  .navLinks a li {
+    text-decoration: none;
+    list-style: none;
+    color: #000 ;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .gridNav{
+    display:none;
+  }
+
+  .mainBodyGrid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr ;
+    padding: 40px;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .regFormLogin {
+    padding: 20px 15px;
+    width: 90%;
+    height: 400px;
+  }
+
+  .mainContentLogin{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    
+  }
+
+  .regForm h2 {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .regForm p {
+    font-size: 14px;
+    color: #8BC4FF;
+    margin-top: 20px;
+  
+  }
+
+  .submitBtn {
+    font-size: 14px;
+    padding: 10px;
+   
+  }
+
+  .gridPostHeaderBtn{
+    margin-bottom: 20px;
+    
+  }
+
+  .regForm form{
+    margin: 0;
+  }
+
+  .gridBlogPostText{
+    margin-top: 16px;
+  }
+
+  .gridBlogPostImg{
+    width: 100%;
+    height: 100%;
+  }
+
+  #newComment{
+    margin-left: 0px;
+   
+  }
+  
+  #submitComment{
+    margin-left: 0;
+   
+  
+  }
+
+  .mainBodyGrid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr ;
+    padding: 10px;
+  }
+
+  .createRegForm {
+    width: 90%;
+  }
+
+  .mainContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
 }

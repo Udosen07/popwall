@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,10 +9,39 @@
   </head>
 
   <body>
+    <div class="createReg">
+      <p class="createRegText">
+        <a href="/"><i class="fa-solid fa-chevron-left"></i> Home </a>
+      </p>
+      <hr />
+      <div class="createRegForm">
+        <h2>Edit Post</h2>
+        <form method="post" id="editPost" name="editPost">
+          <div class="create-input-container">
+            <input type="text" placeholder="title" id="title" required />
+          </div>
+          <div class="create-input-container">
+            <input type="text" placeholder="Image URL" id="image" required />
+          </div>
+          <div class="create-input-container">
+            <textarea
+              id="content"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+          </div>
+          <div id="loadingSpinner" style="display: none">
+            <i class="fas fa-spinner fa-spin"></i> editing...
+          </div>
+          <div id="errorMessage" style="display: none; color: red"></div>
+          <button class="createBtn" type="submit">Edit Post</button>
+        </form>
+      </div>
+    </div>
     <h1>Edit Post</h1>
 
-    <form name="editPost">
+    <!-- <form name="editPost">
       <button>Edit Post</button>
-    </form>
+    </form> -->
   </body>
 </html>

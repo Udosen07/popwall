@@ -1,16 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3d70b51120.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Create Post</h1>
+    <div class="createReg">
+      <p class="createRegText">
+        <a href="/"><i class="fa-solid fa-chevron-left"></i> Home </a>
+      </p>
+      <hr />
+      <div class="createRegForm">
+        <h2>Create Post</h2>
+        <form method="post" id="createPost" name="createPost">
+          <div class="create-input-container">
+            <input type="text" placeholder="title" id="title" required />
+          </div>
+          <div class="create-input-container">
+            <input type="text" placeholder="Image URL" id="image" required />
+          </div>
+          <div class="create-input-container">
+            <textarea
+              id="content"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+          </div>
 
-    <form name="createPost">
+          <div id="loadingSpinner" style="display: none">
+            <i class="fas fa-spinner fa-spin"></i> creating...
+          </div>
+          <div id="errorMessage" style="display: none; color: red"></div>
+          <button class="createBtn" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <form name="createPost">
       <button>Create Post</button>
-    </form>
+    </form> -->
   </body>
 </html>

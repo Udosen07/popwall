@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,10 +8,40 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Profile</h1>
+    <div class="profile-container">
+      <div class="profile-stats">
+        <div class="profile-pic-container-profile">
+          <img
+            src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png"
+            alt="Profile Picture"
+            class="profile-pic"
+          />
+        </div>
+        <div class="stats">
+          <div>
+            <p>6</p>
+            <p>Posts</p>
+          </div>
+          <div>
+            <p>500</p>
+            <p>Followers</p>
+          </div>
+          <div>
+            <p>260</p>
+            <p>Following</p>
+          </div>
+        </div>
+      </div>
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+      <p class="username">Username</p>
+
+      <p class="bio">This is the bio</p>
+
+      <form name="updateProfile">
+        <button>Update Profile</button>
+      </form>
+
+      <h1>Profile</h1>
+    </div>
   </body>
 </html>
