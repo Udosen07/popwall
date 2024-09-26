@@ -1,8 +1,11 @@
+// src/js/api/post/post.js
+
+import { getToken } from "../../utilities/token";
 import { API_KEY, API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
 export async function createPost(postData) {
-  const token = localStorage.getItem("token");
+  const token = getToken();
 
   try {
     const response = await fetch(API_SOCIAL_POSTS, {

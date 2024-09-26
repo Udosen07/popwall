@@ -1,3 +1,4 @@
+// src/js/ui/post/post.js
 import { createPost } from "../../api/post/create";
 
 export async function onCreatePost(event) {

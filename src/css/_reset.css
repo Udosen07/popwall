@@ -609,41 +609,108 @@ body {
 
 }
 /* Profile Page */
-.profile-container{
-  width: 60%;
-  margin: 20px auto;
-}
-
-.profile-pic-container-profile{
+.profileBody {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+
+.profile-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+}
+
+.profile-pic-container-profile {
+  margin: 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
   width: 100px;
   height: 100px;
-  border-radius: 50%; /* Circular border radius */
-  overflow: hidden;
 }
 
-.profile-stats{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.profile-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
-.stats{
+.stats {
   display: flex;
-  gap: 30px;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.stats div {
   text-align: center;
-  font-weight: bold;
 }
 
-.username{
+.username {
+  font-size: 24px;
   font-weight: bold;
+  margin: 10px 0;
 }
 
-.bio{
-  margin-top: 30px;
+.bio {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 20px;
 }
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileForm label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.profileForm input[type="text"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.profileForm input[type="text"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.profileForm button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.profileForm button:hover {
+  background-color: #0056b3;
+}
+
+.profileH1 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
 
 
 @media screen and (max-width: 1024px) {

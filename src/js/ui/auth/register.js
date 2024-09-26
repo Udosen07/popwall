@@ -1,9 +1,7 @@
 import { register } from "../../api/auth/register";
 
 export async function onRegister(event) {
-  // Register api integration
-
-  event.preventDefault(); // Prevent the form from submitting in the traditional way
+  event.preventDefault();
 
   const registerForm = event.target;
 

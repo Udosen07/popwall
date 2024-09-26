@@ -1,76 +1,65 @@
-import { API_SOCIAL_POSTS } from "../../api/constants";
+//src/js/ui/post/update.js
+
+import { readPost } from "../../api/post/read";
 import { updatePost } from "../../api/post/update";
 
-// Function to get the query parameter by name
-function getQueryParameter(name) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
-}
+export async function onUpdatePost() {
+  const postId = new URLSearchParams(window.location.search).get("id");
+  const form = document.getElementById("editPostForm");
 
-const postId = getQueryParameter("id"); // Extract post ID from the URL
-const apiUrl = `${API_SOCIAL_POSTS}/${postId}`;
-
-// Fetch the existing blog post and pre-populate the form
-// async function fetchBlogPost() {
-//   try {
-//     const response = await fetch(apiUrl, {
-//       method: "GET",
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//         "X-Noroff-API-Key": API_KEY,
-//       },
-//     });
-
-//     if (!response.ok) throw new Error("Failed to fetch post.");
-
-//     const data = await response.json();
-//     const post = data.data;
-
-//     document.getElementById("title").value = post.title;
-//     document.getElementById("image").value = post.media.url || "";
-//     document.getElementById("content").value = post.body;
-//   } catch (error) {
-//     console.error("Error fetching blog post:", error);
-//     document.getElementById("errorMessage").innerText =
-//       "Failed to fetch the post.";
-//     document.getElementById("errorMessage").style.display = "block";
-//   }
-// }
-
-// Function to update the blog post
-async function updateBlogPost(postId, postBody, apiUrl) {
-  try {
-    const response = await updatePost(postId, postBody, apiUrl);
-
-    if (!response.ok) throw new Error("Failed to update the post.");
-
-    alert("Blog post updated successfully!");
-    window.location.href = "/";
-  } catch (error) {
-    console.error("Error updating the post:", error);
-    alert("Error updating the post.");
+  if (!postId) {
+    console.error("No post ID found.");
+    return;
   }
-}
 
-// Set up form submission listener
-document.addEventListener("DOMContentLoaded", () => {
-  if (postId) {
-    // fetchBlogPost(); // Fetch the post details when the page loads
+  // Fetch post data to populate the form
+  async function fetchPostData() {
+    try {
+      const responseData = await readPost(postId);
+      populateForm(responseData);
+    } catch (error) {
+      console.error("Error fetching post data:", error);
+    }
+  }
 
-    document.getElementById("editPost").addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevent default form submission
+  // Populate the form with the fetched post data
+  function populateForm(data) {
+    const titleInput = document.getElementById("postTitle");
+    const bodyInput = document.getElementById("postBody");
+    const mediaInput = document.getElementById("postMedia");
 
-      const postBody = {
-        title: document.getElementById("title").value,
-        media: {
-          url: document.getElementById("image").value,
-        },
-        body: document.getElementById("content").value,
+    if (titleInput) titleInput.value = data.title;
+    if (bodyInput) bodyInput.value = data.body;
+    if (mediaInput) mediaInput.value = data.media?.url || "";
+  }
+
+  // Handle form submission
+  async function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const title = document.getElementById("postTitle").value;
+    const body = document.getElementById("postBody").value;
+    const media = document.getElementById("postMedia").value;
+
+    try {
+      const postData = {
+        title,
+        body,
+        media: { url: media },
       };
 
-      updateBlogPost(postBody, postBody, apiUrl); // Call update function with the updated post
-    });
-  } else {
-    alert("Invalid post ID");
+      await updatePost(postId, postData);
+      alert("Post updated successfully!");
+      window.location.href = `/post/?id=${postId}`;
+    } catch (error) {
+      console.error("Error updating post:", error);
+      alert("Failed to update post");
+    }
   }
-});
+
+  if (form) {
+    form.addEventListener("submit", handleFormSubmit);
+  }
+
+  fetchPostData();
+}

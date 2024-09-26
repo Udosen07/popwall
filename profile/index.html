@@ -2,46 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Profile Update</title>
+    <link rel="stylesheet" href="styles.css" />
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <div class="profile-container">
-      <div class="profile-stats">
-        <div class="profile-pic-container-profile">
-          <img
-            src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png"
-            alt="Profile Picture"
-            class="profile-pic"
+    <p class="createRegText">
+      <a href="/"><i class="fa-solid fa-chevron-left"></i> Home </a>
+    </p>
+    <div class="profileBody">
+      <div class="profile-container">
+        <div class="profile-stats">
+          <div class="profile-pic-container-profile">
+            <img
+              src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png"
+              alt="Profile Picture"
+              class="profile-pic"
+              id="profilePic"
+            />
+          </div>
+          <div class="stats">
+            <div>
+              <p id="fpost">6</p>
+              <p>Posts</p>
+            </div>
+            <div>
+              <p id="ffollowers">500</p>
+              <p>Followers</p>
+            </div>
+            <div>
+              <p id="ffollowing">260</p>
+              <p>Following</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="username" id="name">Username</p>
+
+        <p class="bio" id="userbio">This is the bio</p>
+
+        <!-- Update Profile Form -->
+        <form name="updateProfile" id="updateProfileForm" class="profileForm">
+          <label for="avatar">Avatar:</label>
+          <input
+            type="text"
+            id="avatar"
+            name="avatar"
+            placeholder="image url"
+            required
           />
-        </div>
-        <div class="stats">
-          <div>
-            <p>6</p>
-            <p>Posts</p>
-          </div>
-          <div>
-            <p>500</p>
-            <p>Followers</p>
-          </div>
-          <div>
-            <p>260</p>
-            <p>Following</p>
-          </div>
-        </div>
+
+          <label for="bio">Bio:</label>
+          <textarea
+            id="bio"
+            name="bio"
+            rows="4"
+            cols="50"
+            placeholder="Tell us about yourself..."
+          ></textarea>
+
+          <button type="submit">Update Profile</button>
+        </form>
+
+        <h1 class="profileH1">Profile</h1>
       </div>
-
-      <p class="username">Username</p>
-
-      <p class="bio">This is the bio</p>
-
-      <form name="updateProfile">
-        <button>Update Profile</button>
-      </form>
-
-      <h1>Profile</h1>
     </div>
   </body>
 </html>

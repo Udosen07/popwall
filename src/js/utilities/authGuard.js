@@ -4,3 +4,9 @@ export function authGuard() {
     window.location.href = "/auth/login/";
   }
 }
+
+// export function logout() {
+//   localStorage.removeItem("username");
+//   localStorage.removeItem("token");
+//   window.location.href = "/auth/login/";
+// }
