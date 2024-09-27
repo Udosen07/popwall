@@ -38,6 +38,11 @@ body {
   padding-top: 20px;
 }
 
+.logoLink{
+  text-decoration: none;
+  color: #000;
+}
+
 .logoSectionBtn{
   padding: 5px 15px;
   border: 1px solid #000;
@@ -46,6 +51,7 @@ body {
   font-weight: 400;
   cursor: pointer;
   background-color: #fff;
+  text-decoration: none;
 }
 
 .rightSection{
@@ -864,19 +870,15 @@ textarea:focus {
     position: absolute;
   }
   
-  .navLinks a {
+  .navLinks li a  {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: #000 ;
     padding: 20px;
   }
   
-  .navLinks a li:hover {
-    background: #25419e;
-    transition: 0.5s;
-  }
   
-  .navLinks a li {
+  .navLinks li {
     text-decoration: none;
     list-style: none;
     color: #000 ;
